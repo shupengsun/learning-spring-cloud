@@ -20,12 +20,13 @@ public class GoodsController {
 	public ResultBean<Goods> getGoods(@PathVariable String id) {
 		ResultBean<Goods> resultBean = new ResultBean<Goods>();
 		try {
-			String url = "http://localhost:8000/login/zhangsan/123456";
+			String url = "http://127.0.0.1:8000/login/zhangsan/123456";
 			ResultBean<?> forObject = restTemplate.getForObject(url, ResultBean.class);
 
+			resultBean.setStatus("0");
 			if ("0".equals(forObject.getStatus())) {
 				Goods goods = new Goods();
-				goods.setId(1L);
+				goods.setId(Long.valueOf(id));
 				goods.setGoodsName("图书-《异类》");
 				goods.setGoodsCount(100);
 
