@@ -1,0 +1,12 @@
+server:
+  port: 9100
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-eureka:9000/eureka/
+instance:
+  prefer-ip-address: true
