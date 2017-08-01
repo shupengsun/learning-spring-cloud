@@ -6,7 +6,7 @@ spring:
   ####
   profiles: hostname1
 server:
-  port: 8800
+  port: 9000
 eureka:
   instance:
     hostname: hostname1
@@ -19,7 +19,7 @@ spring:
   ####
   profiles: hostname2
 server:
-  port: 8800
+  port: 9000
 eureka:
   instance:
     hostname: hostname2
