@@ -1,29 +1,32 @@
 spring:
   application:
     name: microservice-discovery-eureka-ha
-#------------------------- 
+    
+---  
 spring:
-  ####
-  profiles: hostname1
+  profiles: discovery-eureka-a
 server:
   port: 9000
 eureka:
   instance:
-    hostname: hostname1
+    hostname: discovery-eureka-a
   client:
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://hostname1:8800/eureka/
+      defaultZone: http://discovery-eureka-b:9001/eureka/
 
-#--------------------------
+---
 spring:
-  ####
-  profiles: hostname2
+  profiles: discovery-eureka-b
 server:
-  port: 9000
+  port: 9001
 eureka:
   instance:
-    hostname: hostname2
+    hostname: discovery-eureka-b
   client:
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://hostname2:8800/eureka/
+      defaultZone: http://discovery-eureka-a:9000/eureka/
       
