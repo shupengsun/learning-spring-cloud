@@ -1,6 +1,5 @@
 server:
-  port: 9010
-  
+  port: 9011
 spring:
   application:
     name: microservice-user
@@ -10,7 +9,6 @@ eureka:
       defaultZone: http://discovery-eureka:9000/eureka/
 instance:
   prefer-ip-address: true
-  
 info:
   app:
     name: @project.artifactId@

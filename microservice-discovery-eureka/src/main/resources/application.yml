@@ -1,9 +1,12 @@
 server:
   port: 9000
-
 eureka:
   instance:
     hostname: discovery-eureka
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 5000
   client:
     registerWithEureka: false
     fetchRegistry: false
